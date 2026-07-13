@@ -769,7 +769,7 @@
         setStatus(`Última actualización: ${new Date().toLocaleTimeString("es-CL", { hour: "2-digit", minute: "2-digit", second: "2-digit" })} · ${allRows.length} respuestas`);
       } catch (err) {
         console.error(err);
-        setStatus("No se pudo leer la Sheet. Revisa Apps Script V6 y la URL.");
+        setStatus("Error leyendo Sheet: " + (err && err.message ? err.message : "revisa que estés usando dashboard-final-conectado.html."));
       } finally {
         $("refreshBtn").disabled = false;
       }
